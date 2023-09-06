@@ -57,9 +57,25 @@ while partie == True:
 
     #On regarde qui a gagné cette manche on calcule les points et on affiche le résultat
 
-    if choix1 == 'pierre' and choix2 == 'papier' :
+    if choix1 == choix2 :
+        gagnant = "aucun de vous, vous être ex æquo"
+        print("le gagnant est",gagnant)
+        print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
+
+    elif (choix1 == 'pierre' and choix2 =='ciseaux') or (choix1 == 'papier' and choix2 == 'pierre') or (choix1 == 'ciseaux' and choix2 == 'papier') or (choix1 == 'puit' and choix2 == 'pierre') or (choix1 == 'puit' and choix2 == 'ciseaux') :
+        gagnant = nom1
+        joueur1 = joueur1 + 1
+        print("le gagnant est",gagnant)
+        print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
+
+    else :
         gagnant = nom2
-        joueur1 = joueur1 + 0
+        joueur2 = joueur2 + 1
+        print("le gagnant est",gagnant)
+        print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
+        
+    '''if choix1 == 'pierre' and choix2 == 'papier' :
+        gagnant = nom2
         joueur2 = joueur2 + 1
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
@@ -67,13 +83,11 @@ while partie == True:
     if choix1 == 'pierre' and choix2 == 'ciseaux' :
         gagnant = nom1
         joueur1 = joueur1 + 1
-        joueur2 = joueur2 + 0
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
 
     if choix1 == 'papier' and choix2 == 'ciseaux' :
         gagnant = nom2
-        joueur1 = joueur1 + 0
         joueur2 = joueur2 + 1
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
@@ -81,13 +95,11 @@ while partie == True:
     if choix1 == 'papier' and choix2 == 'pierre' :
         gagnant = nom1
         joueur1 = joueur1 + 1
-        joueur2 = joueur2 + 0
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
 
     if choix1 == 'ciseaux' and choix2 == 'pierre' :
         gagnant = nom2
-        joueur1 = joueur1 + 0
         joueur2 = joueur2 + 1
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
@@ -95,20 +107,17 @@ while partie == True:
     if choix1 == 'ciseaux' and choix2 == 'papier' :
         gagnant = nom1
         joueur1 = joueur1 + 1
-        joueur2 = joueur2 + 0
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
 
     if choix1 == 'puit' and choix2 == 'pierre' :
         gagnant = nom1
         joueur1 = joueur1 + 1
-        joueur2 = joueur2 + 0
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
 
     if choix1 == 'puit' and choix2 == 'papier' :
         gagnant = nom2
-        joueur1 = joueur1 + 0
         joueur2 = joueur2 + 1
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
@@ -116,13 +125,11 @@ while partie == True:
     if choix1 == 'puit' and choix2 == 'ciseaux' :
         gagnant = nom1
         joueur1 = joueur1 + 1
-        joueur2 = joueur2 + 0
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
 
     if choix1 == 'pierre' and choix2 == 'puit' :
         gagnant = nom2
-        joueur1 = joueur1 + 0
         joueur2 = joueur2 + 1
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
@@ -130,23 +137,14 @@ while partie == True:
     if choix1 == 'papier' and choix2 == 'puit' :
         gagnant = nom1
         joueur1 = joueur1 + 1
-        joueur2 = joueur2 + 0
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
 
     if choix1 == 'ciseaux' and choix2 == 'puit' :
         gagnant = nom2
-        joueur1 = joueur1 + 0
         joueur2 = joueur2 + 1
         print("le gagnant est",gagnant)
-        print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
-    
-    if choix1 == choix2 :
-        gagnant = "aucun de vous, vous être ex æquo"
-        joueur1 = joueur1 + 0
-        joueur2 = joueur2 + 0
-        print("le gagnant est",gagnant)
-        print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
+        print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")'''
 
     if np ==1 or np ==2 or np==3 or np==4:
         partie = True
