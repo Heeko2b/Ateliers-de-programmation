@@ -1,21 +1,28 @@
 import random
+
 #creation de partie
 ordinateur = input("Voulez-vous jouer contre l'ordinateur (Max 5 parties) O/N ? " )
-if ordinateur != 'O' :
-    if ordinateur != 'N' :
-        print("Je n'ai pas compris votre réponse")
+#Si l'utilisateur ne répond pas correctement, on lui redemande
+if ordinateur != 'O' and ordinateur != 'N' :
+    print("Je n'ai pas compris votre réponse")
+    while ordinateur != 'O' and ordinateur != 'N' :
+        ordinateur = input("Voulez-vous jouer contre l'ordinateur (Max 5 parties) O/N ? " )
+        if ordinateur != 'O' and ordinateur != 'N' :
+            print("Je n'ai pas compris votre réponse")
+#Si il répond oui:
 if ordinateur == 'O':
     nom1 = input("Quel est votre nom ? ")
     print("Bienvenue ",nom1, " nous allons jouer ensemble \n")
     nom2 = 'Machine'
 joueur1 = 0
 np = 0 #nombre de parties
+    
+#Si il répond non:
 if ordinateur == 'N':
     nom1 = input("Quel est votre nom ? ")
     print("Bienvenue ",nom1, " nous allons jouer ensemble")
     nom2 = input("Quel est le nom du deuxième joueur ?")
     print("Bienvenue ",nom2, " nous allons jouer ensemble \n")
-
 partie = True
 joueur2 = 0
 while partie == True:
@@ -74,12 +81,10 @@ while partie == True:
         print("le gagnant est",gagnant)
         print("Les scores à l'issue de cette manche sont donc",nom1, joueur1, "et", nom2, joueur2, "\n")
 
-    if np ==1 or np ==2 or np==3 or np==4:
-        partie = True
     if np ==5:
         partie = False
         
-    if np ==1 or np ==2 or np==3 or np==4:
+    elif np >=1 and np <=4:
         #On propose de c ou de s'arrêter 
         go = input("Souhaitez vous refaire une partie {} contre {} ? (O/N) ".format(nom1,nom2))
         if go == 'O':
